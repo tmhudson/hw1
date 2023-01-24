@@ -471,6 +471,12 @@ VALUES (
 .print "Movies"
 .print "======"
 .print ""
+SELECT studios.studio_name, movies.title, movies.year_released, movies.mpaa_rating, 
+FROM movies INNER JOIN studios ON studios.studio_id = movies.studio_id
+
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+.print ""
+.print ""
 
 -- The SQL statement for the movies output
 -- TODO!
