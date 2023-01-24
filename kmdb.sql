@@ -115,8 +115,7 @@ CREATE TABLE movies (
     title TEXT,
     year_released INTEGER,
     mpaa_rating TEXT,
-    studio_id TEXT,
-    cast_id TEXT
+    studio_id INTEGER
 );
 
 CREATE TABLE studios (
@@ -127,18 +126,21 @@ CREATE TABLE studios (
 CREATE TABLE castgroups (
     castgroup_id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_id TEXT,
+    actor_id INTEGER,
     actor_name TEXT,
     character_name TEXT
 );
 
 CREATE TABLE actors (
     actor_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cast_id TEXT
+    actor_name TEXT
 );
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
+---inserting data into movie tables
 
 INSERT INTO movies (
     title,
@@ -150,7 +152,7 @@ VALUES (
     "Batman Begins",
     "2005",
     "PG-13",
-    "Warner Bros."
+    1
 );
 
 INSERT INTO movies (
@@ -163,7 +165,7 @@ VALUES (
     "The Dark Knight",
     "2008",
     "PG-13",
-    "Warner Bros."
+    1
 );
 
 INSERT INTO movies (
@@ -176,173 +178,294 @@ VALUES (
     "The Dark Knight Rises",
     "2012",
     "PG-13",
+    1
+);
+
+---inserting data into studios table
+
+INSERT INTO studios (
+    studio_name
+)
+VALUES (
     "Warner Bros."
 );
 
+---inserting data into actors table
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Christian Bale"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Michael Caine"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Liam Neeson"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Katie Holmes"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Gary Oldman"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Heath Ledger"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Aaron Eckhart"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Maggie Gyllenhaal"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Tom Hardy"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Joseph Gordon-Levitt"
+);
+
+INSERT INTO actors (
+    actor_name
+)
+VALUES (
+    "Anne Hathaway"
+);
+
+---inserting data into castgroups table
+
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "Batman Begins",
+    1,
+    1,
     "Christian Bale",
     "Bruce Wayne"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "Batman Begins",
+    1,
+    2,
     "Michael Caine",
     "Alfred"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "Batman Begins",
+    1,
+    3,
     "Liam Neeson",
     "Ra's Al Ghul"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "Batman Begins",
+    1,
+    4,
     "Katie Holmes",
     "Rachel Dawes"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "Batman Begins",
+    1,
+    5,
     "Gary Oldman",
     "Commissioner Gordon"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight",
+    2,
+    1,
     "Christian Bale",
     "Bruce Wayne"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight",
+    2,
+    6,
     "Heath Ledger",
     "Joker"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight",
+    2,
+    7,
     "Aaron Eckhart",
     "Harvey Dent"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight",
+    2,
+    2,
     "Michael Caine",
     "Alfred"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight",
+    2,
+    8,
     "Maggie Gyllenhaal",
     "Rachel Dawes"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight Rises",
+    3,
+    1,
     "Christian Bale",
     "Bruce Wayne"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight Rises",
+    3,
+    5,
     "Gary Oldman",
     "Commissioner Gordon"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight Rises",
+    3,
+    9,
     "Tom Hardy",
     "Bane"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight Rises",
+    3,
+    10,
     "Joseph Gordon-Levitt",
     "John Blake"
 );
 
 INSERT INTO castgroups (
     movie_id,
+    actor_id,
     actor_name,
     character_name
 )
 VALUES (
-    "The Dark Knight Rises",
+    3,
+    11,
     "Anne Hathaway",
     "Selina Kyle"
 );
+
 
 -- Prints a header for the movies output
 .print "Movies"
