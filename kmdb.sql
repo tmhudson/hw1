@@ -125,7 +125,7 @@ CREATE TABLE studios (
 
 CREATE TABLE castgroups (
     castgroup_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    movie_id TEXT,
+    movie_id INTEGER,
     actor_id INTEGER,
     actor_name TEXT,
     character_name TEXT
@@ -484,8 +484,8 @@ FROM movies INNER JOIN studios ON studios.studio_id = movies.studio_id;
 .print "Top Cast"
 .print "========"
 .print ""
-SELECT movie_id, actor_name, character_name
-FROM castgroups INNER JOIN castgroups ON movies.movie_id = castrgroups.movie_id;
+SELECT title, actor_name, character_name
+FROM movies INNER JOIN castgroups ON movies.movie_id = castgroups.movie_id
 
 -- The SQL statement for the cast output
 -- TODO!
