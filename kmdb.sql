@@ -127,7 +127,6 @@ CREATE TABLE studios (
 CREATE TABLE castgroups (
     castgroup_id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_id TEXT,
-    actor_id TEXT,
     actor_name TEXT,
     character_name TEXT
 );
@@ -178,6 +177,17 @@ VALUES (
     "2012",
     "PG-13",
     "Warner Bros."
+);
+
+INSERT INTO castgroups (
+    movie_id,
+    actor_name,
+    character_name
+)
+VALUES (
+    "Batman Begins",
+    "Christian Bale",
+    "Bruce Wayne"
 );
 
 -- Prints a header for the movies output
