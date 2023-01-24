@@ -471,21 +471,27 @@ VALUES (
 .print "Movies"
 .print "======"
 .print ""
+
+-- The SQL statement for the movies output
+-- TODO!
+
 SELECT title, year_released, mpaa_rating, studio_name
 FROM movies INNER JOIN studios ON studios.studio_id = movies.studio_id;
 
 .print ""
 
--- The SQL statement for the movies output
--- TODO!
+
 
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
 .print "========"
 .print ""
-SELECT title, actor_name, character_name
-FROM movies INNER JOIN castgroups ON movies.movie_id = castgroups.movie_id
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT title, actor_name, character_name
+FROM movies INNER JOIN castgroups ON movies.movie_id = castgroups.movie_id
+
+-- Final change before submission
