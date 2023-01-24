@@ -121,7 +121,7 @@ CREATE TABLE movies (
 
 CREATE TABLE studios (
     studio_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    studio_name TEXT,
+    studio_name TEXT
 );
 
 CREATE TABLE castgroups (
@@ -134,16 +134,51 @@ CREATE TABLE castgroups (
 
 CREATE TABLE actors (
     actor_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cast_id TEXT,
+    cast_id TEXT
 );
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
-INSERT INTO movies (""
-
+INSERT INTO movies (
+    title,
+    year_released,
+    mpaa_rating,
+    studio_id
 )
+VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "Warner Bros."
+);
+
+INSERT INTO movies (
+    title,
+    year_released,
+    mpaa_rating,
+    studio_id
+)
+VALUES (
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    "Warner Bros."
+);
+
+INSERT INTO movies (
+    title,
+    year_released,
+    mpaa_rating,
+    studio_id
+)
+VALUES (
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    "Warner Bros."
+);
 
 -- Prints a header for the movies output
 .print "Movies"
